@@ -13,7 +13,7 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	//window 
-	GLFWwindow* window = glfwCreateWindow(1600, 1200, "LearnOpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(400, 300, "LearnOpenGL", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Faild to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -28,7 +28,7 @@ int main() {
 		return -1;
 	}
 
-	glViewport(0, 0, 400, 300);
+	glViewport(0, 0, 800, 600);
 
 	while (!glfwWindowShouldClose(window)) {
 		
