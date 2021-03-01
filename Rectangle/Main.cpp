@@ -30,7 +30,7 @@ int main() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Hello Triangle", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 600, "Hello Rectangle", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Failed to create GLFW window";
 		glfwTerminate();
@@ -45,24 +45,39 @@ int main() {
 		return -1;
 	}
 
-	// Triangle
+	// Rectangle
 	float vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		 0.0f,  0.5f, 0.0f
+		 0.5f,  0.5f, 0.0f, // Top-Right
+		 0.5f, -0.5f, 0.0f, // Bottom-Right
+		-0.5f, -0.5f, 0.0f, // Bottom-Left
+		-0.5f,  0.5f, 0.0f	// Top-Left
 	};
+
+	unsigned int indices[] = {
+		0,1,3,
+		1,2,3
+	};
+
 
 	// Vertex array object 
 	unsigned int VAO;
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
-	// Vertex buffer object 
 
+
+	// Vertex buffer object 
 	unsigned int VBO;
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
+	// Element buffer object 
+	unsigned int EBO;
+	glGenBuffers(1, &EBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+	// Vertex attribute
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
@@ -124,9 +139,9 @@ int main() {
 	while (!glfwWindowShouldClose(window)) {
 
 		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
 
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glfwSwapBuffers(window);
 
@@ -146,5 +161,8 @@ int main() {
 
 	return 0;
 }
+
+
+
 
 
