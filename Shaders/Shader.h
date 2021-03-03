@@ -26,7 +26,7 @@ public:
 
 		try {
 			vShaderFile.open(vertexPath);
-			fShaderFile.open(fragmentCode);
+			fShaderFile.open(fragmentPath);
 			std::stringstream vShaderStream, fShaderStream; 
 
 			vShaderStream << vShaderFile.rdbuf();
