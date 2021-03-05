@@ -1,8 +1,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <ResourceIndexer.h>
 #include "Shader.h"
+
 
 int main() {
 	glfwInit();
