@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Transformation", "Transform
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoordinateSystem", "CoordinateSystem\CoordinateSystem.vcxproj", "{DBB03429-BC4D-4BB2-A479-10C2F30966F2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cube", "Cube\Cube.vcxproj", "{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{DBB03429-BC4D-4BB2-A479-10C2F30966F2}.Release|x64.Build.0 = Release|x64
 		{DBB03429-BC4D-4BB2-A479-10C2F30966F2}.Release|x86.ActiveCfg = Release|Win32
 		{DBB03429-BC4D-4BB2-A479-10C2F30966F2}.Release|x86.Build.0 = Release|Win32
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Debug|x64.ActiveCfg = Debug|x64
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Debug|x64.Build.0 = Debug|x64
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Debug|x86.Build.0 = Debug|Win32
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Release|x64.ActiveCfg = Release|x64
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Release|x64.Build.0 = Release|x64
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Release|x86.ActiveCfg = Release|Win32
+		{E6EE8C9E-A67D-4EAC-8EBF-278C4849D555}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
