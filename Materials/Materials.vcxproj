@@ -40,8 +40,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2da31619-56dc-41a1-913e-74364bdbde1e}</ProjectGuid>
-    <RootNamespace>Colors</RootNamespace>
+    <ProjectGuid>{fd443a3d-f46c-4792-821d-e14d1813f88c}</ProjectGuid>
+    <RootNamespace>Materials</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
