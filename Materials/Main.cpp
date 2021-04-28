@@ -85,6 +85,15 @@ int initialize() {
 	return 0;
 }
 
+struct Material {
+	glm::vec3 ambient;
+	glm::vec3 diffuse;
+	glm::vec3 specular;
+	glm::float32 shininess;
+};
+
+
+
 int main() {
 	
 	if (initialize() == -1) {
@@ -173,6 +182,16 @@ int main() {
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
+	//Materials : 
+	Material gold;
+	gold.ambient = glm::vec3(0.24725f, 0.1995f, 0.0745f);
+	gold.diffuse = glm::vec3(0.75164f, 0.60648f, 0.22648f);
+	gold.specular = glm::vec3(0.628281f, 0.555802f, 0.366065f);
+	gold.shininess = glm::float32(0.4f);
+	 
+
+
+
 	while (!glfwWindowShouldClose(window)) {
 		
 		float currentFrame = glfwGetTime();
@@ -187,9 +206,25 @@ int main() {
 		
 
 		cubeShader.use();
-		cubeShader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
-		cubeShader.setVec3("lightColor", 1.0f, 1.0f, 1.0f);
-		cubeShader.setVec3("lightPos", lightPos);
+		cubeShader.setVec3("material.ambient",gold.ambient);
+		cubeShader.setVec3("material.diffuse", gold.diffuse);
+		cubeShader.setVec3("material.specular", gold.specular);
+		cubeShader.setFloat("material.shininess", gold.shininess);
+
+		glm::vec3 lightColor;
+		lightColor.x = sin(glfwGetTime() * 1.0f);
+		lightColor.y = sin(glfwGetTime() * 1.0f);
+		lightColor.z = sin(glfwGetTime() * 1.0f);
+
+
+		glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f);
+		glm::vec3 ambientColor = diffuseColor * glm::vec3(0.2f);
+
+		cubeShader.setVec3("light.ambient", ambientColor);
+		cubeShader.setVec3("light.diffuse", diffuseColor);
+		cubeShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
+
+		cubeShader.setVec3("light.position", lightPos);
 		cubeShader.setVec3("viewPos", camera.Position);
 
 		// Create Transformation 
