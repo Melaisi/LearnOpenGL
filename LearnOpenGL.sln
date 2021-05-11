@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LightingMaps", "LightingMap
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LightCasters", "LightCasters\LightCasters.vcxproj", "{CB28676C-B214-413D-A408-BCBA3AC9DADC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assimp", "Assimp\Assimp.vcxproj", "{3181024D-F357-4EF5-B1F4-026302F3582A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{CB28676C-B214-413D-A408-BCBA3AC9DADC}.Release|x64.Build.0 = Release|x64
 		{CB28676C-B214-413D-A408-BCBA3AC9DADC}.Release|x86.ActiveCfg = Release|Win32
 		{CB28676C-B214-413D-A408-BCBA3AC9DADC}.Release|x86.Build.0 = Release|Win32
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Debug|x64.ActiveCfg = Debug|x64
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Debug|x64.Build.0 = Debug|x64
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Debug|x86.ActiveCfg = Debug|Win32
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Debug|x86.Build.0 = Debug|Win32
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Release|x64.ActiveCfg = Release|x64
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Release|x64.Build.0 = Release|x64
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Release|x86.ActiveCfg = Release|Win32
+		{3181024D-F357-4EF5-B1F4-026302F3582A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
